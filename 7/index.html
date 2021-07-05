@@ -1,0 +1,108 @@
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+<link href='main.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script>
+        
+   function downloadimage() {
+            var container = document.getElementById("doc2");
+             
+             html2canvas(container, {scrollY: -window.scrollY}, {useCORS:true}).then(function(canvas) {
+             var link = document.createElement("a");
+             document.body.appendChild(link);
+                link.download = "html_image.png";
+                link.href = canvas.toDataURL();
+                link.target = '_blank';
+                link.click();
+            });
+        }
+     function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('pic');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+        </script>
+<head>
+<body>
+<div class="w3-top" data-html2canvas-ignore="true">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="dontprint w3-bar-item w3-button w3-wide">RESME</a>
+      <div class="w3-right w3-hide-small">
+        <a href="javascript:downloadimage()" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Save</a>
+      </div>
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+     <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<div class="rela-block page" id="doc2" contenteditable="true">
+    <div class="rela-block top-bar">
+        <div class="caps name"><div class="abs-center">YOUR NAME</div></div>
+    </div>
+    <div class="side-bar">
+        <div class="mugshot">
+            <div class="logo">
+                
+                    <input type="file" accept="image/*" onchange="preview_image(event)" data-html2canvas-ignore="true">
+ <img width="200px" height="200px" id="pic"/>
+       
+                    <path d="M 10 10 L 52 10 L 72 30 L 72 70 L 30 70 L 10 50 Z" stroke-width="2.5" fill="none"/>
+                </svg>
+                
+            </div>
+        </div>
+        <p>123 My Place Drive</p>
+        <p>Astoria, New York 11105</p>
+        <p>1-800-CALLPLZ</p>
+        <p>emailsareforsquares@gmail.com</p><br>
+        <p class="rela-block social twitter">Twitter stuff</p>
+        <p class="rela-block social pinterest">Pinterest things</p>
+        <p class="rela-block social linked-in">Linked-in man</p>
+        <p class="rela-block caps side-header">Expertise</p>
+        <p class="rela-block list-thing">HTML</p>
+        <p class="rela-block list-thing">CSS (Stylus)</p>
+        <p class="rela-block list-thing">JavaScript & jQuery</p>
+        <p class="rela-block list-thing">Killer Taste</p>
+        <p class="rela-block caps side-header">Education</p>
+        <p class="rela-block list-thing">Advanced potion making</p>
+        <p class="rela-block list-thing">Degree in popping and locking</p>
+        <p class="rela-block list-thing">Knitting game on point</p>
+        <p class="rela-block list-thing">Culinary af</p>
+    </div>
+    <div class="rela-block content-container">
+        <h2 class="rela-block caps title">Job title</h2>
+        <div class="rela-block separator"></div>
+        <div class="rela-block caps greyed">Profile</div>
+        <p class="long-margin">Madison is fueled by her passion for understanding the nuances of cross-cultural advertising. She considers herself a ‘forever student,’ eager to both build on her academic foundations in psychology and sociology and stay in tune with the latest digital marketing strategies through continued coursework and professional development. </p>
+        <div class="rela-block caps greyed">Experience</div>
+
+        <h3>Job #1</h3>
+        <p class="light">First job description</p>
+        <p class="justified">Madison is fueled by her passion for understanding the nuances of cross-cultural advertising. She considers herself a ‘forever student,’ eager to both build on her academic foundations in psychology and sociology and stay in tune with the latest digital marketing strategies through continued coursework and professional development. </p>
+        
+        <h3>Job #2</h3>
+        <p class="light">Second Job Description</p>
+        <p class="justified">Madison is fueled by her passion for understanding the nuances of cross-cultural advertising. She considers herself a ‘forever student,’ eager to both build on her academic foundations in psychology and sociology and stay in tune with the latest digital marketing strategies through continued coursework and professional development.</p>
+        
+        <h3>Job #3</h3>
+        <p class="light">Third Job Description</p>
+        <p class="justified">Madison is fueled by her passion for understanding the nuances of cross-cultural advertising. She considers herself a ‘forever student,’ eager to both build on her academic foundations in psychology and sociology and stay in tune with the latest digital marketing strategies through continued coursework and professional development.</p>
+    </div>
+</div>
+<br>
+
+</body>
+</html>
