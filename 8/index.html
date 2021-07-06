@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+	<title>Form1</title>
+        
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	
+	<link rel="stylesheet" type="text/css" href="resume.css" media="all" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="cv-maker.css">
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+        <style type="text/css" media="print">
+        .dontprint
+        { display: none; }
+        .w3-bar .w3-button {
+        padding: 16px;
+        }
+        </style>
+        
+
+</head>
+<body>
+<div class="w3-top" data-html2canvas-ignore="true">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="dontprint w3-bar-item w3-button w3-wide">RESME</a>
+      <div class="w3-right w3-hide-small">
+        <a href="#print" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Save</a>
+      </div>
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+     <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<div class="container" contenteditable="true" id="doc2">
+  <div class="word_split wrapper">
+  <span class="word word1"> John </span>
+  <span class="word word2">Doe</span>
+  <span class="word word3">Personal</span>
+  <span class="word word4">Details</span>
+  <span class="word word5">Employment</span>
+  <span class="word word6">History </span>
+  <span class="word word7">Education</span>
+  <span class="word word8">Personal</span>
+  <span class="word word9">Skills </span>
+  <span class="word word10">Technical</span>
+  <span class="word word11">Skills </span>
+  <span class="word word12">Get In </span>
+  <span class="word word13">Touch</span>
+    
+    <div class="bubble1">
+     <span class="the-arrow1"></span>
+      HI! <br/> I AM..
+   </div>
+  <div class="bubble2">
+     <span class="the-arrow2"></span>
+    <input type="file" accept="image/*" onchange="preview_image(event)" data-html2canvas-ignore="true">
+          <img width="200px" height="200px"  id="output_image"/>
+   </div>
+  <div class="bubble3">
+     <span class="the-arrow3"></span>
+    NATIONALITY...<br/>
+    LOCATION...<br/>
+    BIRTHDAY...<br/>
+    HOBBIES<br/>
+    ETC...<br/>
+    ETC...<br/>
+   </div>
+  <div class="bubble4">
+     <span class="the-arrow4"></span>
+    GRAPHIC DESIGNER 2005 - 2007<br/>
+    Lorem Ipsum dolor sit amet. Lorem Ipsum dolor.<br/><br/>
+    CREATIVE DIRECTOR 2008 - Current
+    <br/>
+    Lorem Ipsum dolor sit amet.
+    
+   </div>
+  <div class="bubble5">
+     <span class="the-arrow5"></span>
+    HIGH SCHOOL<br/>
+    Lorem Ipsum dolor sit amet<br/>
+    May 2004, GPA 1.5<br/><br/>
+    UNIVERSITY <br/>
+    Lorem Ipsum dolor sit amet<br/>
+    July 2007, GPA 1.5
+    
+   </div>
+  <div class="bubble6">
+     <span class="the-arrow6"></span>
+    SOCIAL COMMITMENT<br/>
+    ORGANIZATION<br/>
+    CREATIVITY<br/>
+    COMMUNICATION<br/>
+    TEAMWORK<br/>
+   </div>
+  <div class="bubble7">
+     <span class="the-arrow7"></span>
+    PHOTOSHOP<br/>
+    ILLUSTRATOR<br/>
+    INDESIGN<br/>
+    FLASH<br/>
+    DREAMWEAVER<br/>
+    XHTML/CSS<br/>
+    JAVASCRIPT<br/>
+   </div>
+  <div class="bubble8">
+     <span class="the-arrow8"></span>
+    PHONE...<br/>
+    EMAIL...<br/>
+    WEBSITE... <br/>
+    TWITTER...<br/>
+    FACEBOOK...<br/>
+    DRIBBBLE...<br/>
+   </div>   
+</div>
+   
+</div><!--end container-->
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<footer class="dontprint w3-center w3-black w3-padding-32" id="print" data-html2canvas-ignore="true">
+  <button class="botton" onclick="downloadimage()" id="downloadimage">SAVE</button>
+  <div class="w3-xlarge w3-section">
+</footer>
+<script>
+        
+   function downloadimage() {
+            var container = document.body;
+             window.scrollTo(0,0); 
+             html2canvas(container, {scrollY: -window.scrollY}, {useCORS:true}).then(function(canvas) {
+             var link = document.createElement("a");
+             document.body.appendChild(link);
+                link.download = "html_image.png";
+                link.href = canvas.toDataURL();
+                link.target = '_blank';
+                link.click();
+            });
+        }
+   var select = function(s) {
+  return document.querySelector(s);
+}
+function preview_image(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+       var output = document.getElementById('output_image');
+      output.src = reader.result;
+      }
+    reader.readAsDataURL(event.target.files[0]);
+}
+        </script>
+</body>
+</html>
+
