@@ -182,7 +182,7 @@ function downloadimage() {
              html2canvas(container, {scrollY: -window.scrollY}, {useCORS:true}).then(function(canvas) {
              var link = document.createElement("a");
              document.body.appendChild(link);
-                link.download = "html_image.png";
+                link.download = "resme.png";
                 link.href = canvas.toDataURL();
                 link.target = '_blank';
                 link.click();
